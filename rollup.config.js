@@ -13,8 +13,8 @@ export default {
       { dest: 'dist/bundle.cjs.js', format: 'cjs', },
       { dest: 'dist/bundle.umd.js', format: 'umd', },
   ],
-  moduleId: 'turmeric-utils',
-  moduleName: 'turmeric-utils',
+  moduleId: 'fenugreek-collections',
+  moduleName: 'fenugreek-collections',
   sourceMap: true,
   exports: 'named',
   plugins: [

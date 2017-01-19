@@ -9,8 +9,8 @@ export default {
     entry: 'src/index.js',
     dest: 'dist/bundle.es6.js',
     format: 'es',
-    moduleId: 'turmeric-utils',
-    moduleName: 'turmeric-utils',
+    moduleId: 'fenugreek-collections',
+    moduleName: 'fenugreek-collections',
     sourceMap: true,
     plugins: [
       nodeResolve(),
