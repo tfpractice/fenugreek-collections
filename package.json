@@ -49,5 +49,18 @@
     "rollup-plugin-replace": "^1.1.1",
     "rollup-plugin-uglify": "^1.0.1",
     "rollup-plugin-visualizer": "^0.2.0"
+  },
+  "jest": {
+    "collectCoverage": "true",
+    "collectCoverageFrom": [
+      "src/**"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "unmockedModulePathPatterns": [
+      "jasmine-expect"
+    ]
   }
 }

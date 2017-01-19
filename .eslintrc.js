@@ -18,7 +18,7 @@ module.exports = {
           },
         sourceType: 'module',
       },
-    plugins: ['import'],
+    plugins: ['import', 'json'],
     rules: {
         // Ignore Rules
         strict: 1,
