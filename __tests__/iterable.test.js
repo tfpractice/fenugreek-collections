@@ -3,7 +3,7 @@ import { isIterable, iterify, } from 'src/iterable';
 
 describe('isIterable', () => {
   it('checks if an object has an iterator', () => {
-    expect(isIterable([ 1,33,4, ])).toBeTrue();
+    expect(isIterable([ 1,3,4, ])).toBeTrue();
   });
 });
 describe('iterify', () => {
