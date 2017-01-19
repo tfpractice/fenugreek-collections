@@ -1,6 +1,6 @@
 import spread, { spreadK, spreadV, } from './spread';
-
-export const has = coll => el => new Set(coll).has(el);
+import { asSet, } from './cast';
+export const has = coll => el => asSet(coll).has(el);
 export const xhas = coll => el => !has(coll)(el);
 
 export const hasK = coll => k => has(spreadK(coll))(k);
