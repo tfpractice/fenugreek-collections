@@ -1,0 +1,12 @@
+{
+    "presets": ["babili",["latest", { "es2015": { "modules": false } }]],
+    "env": { "test": { "presets": ["babili",["latest"]] } },
+    "plugins": [["module-resolver", {
+            "root": ["./"],
+            "alias": {
+              "src": "./src",
+
+            }
+        }],
+    ],
+}
