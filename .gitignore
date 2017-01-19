@@ -4,4 +4,4 @@ stats*
 dist
 .eslintcache
 *.log
-coverage/
+coverage
