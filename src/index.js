@@ -1,5 +1,10 @@
 export * from './iterable';
 export * from './spread';
-export * from './has';
 export { default as spread, } from './spread';
+export * from './group';
+export * from './has';
+export * from './reducers';
+export * from './compare';
+export * from './manipulate';
+export * from './accessors';
 export * from './cast';
