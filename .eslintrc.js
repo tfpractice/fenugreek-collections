@@ -57,9 +57,7 @@ module.exports = {
         'no-self-compare': 2,
         'valid-typeof': 2,
         'no-unused-vars': 2,
-        'no-multi-spaces': [ 2, {
-          exceptions: { Property: true },
-        },],
+
         //  "handle-callback-err": 2,
         'no-shadow-restricted-names': 2,
         'no-new-require': 2,
@@ -127,8 +125,12 @@ module.exports = {
           exports: 'always',
           functions: 'ignore',
         },],
-        'no-trailing-spaces': [ 'error', { skipBlankLines: true }],
+        'no-trailing-spaces': [ 0, { skipBlankLines: true }],
+        'no-irregular-whitespace': [ 'error', { skipComments: true }],
         'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
+        'no-multi-spaces': [ 2, {
+          exceptions: { Property: true, Comment: false },
+        },],
         'rest-spread-spacing': [ 'error', 'never'],
         'sort-imports': ['error', {
           ignoreCase: true,
