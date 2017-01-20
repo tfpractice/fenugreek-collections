@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>accessors.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="accessors.html">
+                  accessors.js
+                </a>
+              
+                
+                <a class="source" href="array.html">
+                  array.js
+                </a>
+              
+                
+                <a class="source" href="cast.html">
+                  cast.js
+                </a>
+              
+                
+                <a class="source" href="compare.html">
+                  compare.js
+                </a>
+              
+                
+                <a class="source" href="group.html">
+                  group.js
+                </a>
+              
+                
+                <a class="source" href="has.html">
+                  has.js
+                </a>
+              
+                
+                <a class="source" href="index.html">
+                  index.js
+                </a>
+              
+                
+                <a class="source" href="iterable.html">
+                  iterable.js
+                </a>
+              
+                
+                <a class="source" href="manipulate.html">
+                  manipulate.js
+                </a>
+              
+                
+                <a class="source" href="reducers.html">
+                  reducers.js
+                </a>
+              
+                
+                <a class="source" href="spread.html">
+                  spread.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>accessors.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread, { spreadK, spreadKV, spreadV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
+<span class="hljs-keyword">import</span> { asMap, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> get = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> k =&gt; asMap(c).get(k);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> first = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> spread(c).shift();
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> last = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> spread(c).pop();
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> firstK = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> first(spreadK(c));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> lastK = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> last(spreadK(c));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> firstV = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> first(spreadV(c));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> lastV = <span class="hljs-function">(<span class="hljs-params">c = []</span>) =&gt;</span> last(spreadV(c));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> fromIndex = <span class="hljs-function">(<span class="hljs-params">c = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span></span>) =&gt;</span> i =&gt; spread(c).slice(i, i + <span class="hljs-number">1</span>).shift();</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

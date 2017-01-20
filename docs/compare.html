@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>compare.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="accessors.html">
+                  accessors.js
+                </a>
+              
+                
+                <a class="source" href="array.html">
+                  array.js
+                </a>
+              
+                
+                <a class="source" href="cast.html">
+                  cast.js
+                </a>
+              
+                
+                <a class="source" href="compare.html">
+                  compare.js
+                </a>
+              
+                
+                <a class="source" href="group.html">
+                  group.js
+                </a>
+              
+                
+                <a class="source" href="has.html">
+                  has.js
+                </a>
+              
+                
+                <a class="source" href="index.html">
+                  index.js
+                </a>
+              
+                
+                <a class="source" href="iterable.html">
+                  iterable.js
+                </a>
+              
+                
+                <a class="source" href="manipulate.html">
+                  manipulate.js
+                </a>
+              
+                
+                <a class="source" href="reducers.html">
+                  reducers.js
+                </a>
+              
+                
+                <a class="source" href="spread.html">
+                  spread.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>compare.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread, { spreadKV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
+<span class="hljs-keyword">import</span> { addBin, addBinMap, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
+<span class="hljs-keyword">import</span> { hasK, hasKV, xhasK, xhasKV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./has'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> inter = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt; spread(c0).filter(hasK(c1));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> diff = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt; spread(c0).filter(xhasK(c1));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> union = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt; spread(c0).concat(diff(c1)(c0));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapInter = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
+  spread(c0).filter(hasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapDiff = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
+  spread(c0).filter(xhasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapUnion = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
+  spread(mapDiff(c1)(c0)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>(c0));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> uniteMap = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
+  spread(mapDiff(c1)(c0)).reduce(addBinMap, c0);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

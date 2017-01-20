@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>reducers.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="accessors.html">
+                  accessors.js
+                </a>
+              
+                
+                <a class="source" href="array.html">
+                  array.js
+                </a>
+              
+                
+                <a class="source" href="cast.html">
+                  cast.js
+                </a>
+              
+                
+                <a class="source" href="compare.html">
+                  compare.js
+                </a>
+              
+                
+                <a class="source" href="group.html">
+                  group.js
+                </a>
+              
+                
+                <a class="source" href="has.html">
+                  has.js
+                </a>
+              
+                
+                <a class="source" href="index.html">
+                  index.js
+                </a>
+              
+                
+                <a class="source" href="iterable.html">
+                  iterable.js
+                </a>
+              
+                
+                <a class="source" href="manipulate.html">
+                  manipulate.js
+                </a>
+              
+                
+                <a class="source" href="reducers.html">
+                  reducers.js
+                </a>
+              
+                
+                <a class="source" href="spread.html">
+                  spread.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>reducers.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
+<span class="hljs-keyword">import</span> { append, flatten, flatTuple, triple, tuple, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./group'</span>;
+<span class="hljs-keyword">import</span> { asMap,asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
+<span class="hljs-keyword">import</span> { removify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addBin = <span class="hljs-function">(<span class="hljs-params">c, el</span>) =&gt;</span> append(c)(el);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addBinSet = <span class="hljs-function">(<span class="hljs-params">c, el</span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(append(c)(el));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addBinMap = <span class="hljs-function">(<span class="hljs-params">c, el</span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>(append(c)(el));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeBin = <span class="hljs-function">(<span class="hljs-params">c, el</span>) =&gt;</span> removify(c).delete(el) ? c : c;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeBinArray = <span class="hljs-function">(<span class="hljs-params">c, el</span>) =&gt;</span> spread(removeBin(asSet(c), el));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeBinTuple = <span class="hljs-function">(<span class="hljs-params">c, [ k, v, ]</span>) =&gt;</span> removeBin(asMap(c), k);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>
