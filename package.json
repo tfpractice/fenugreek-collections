@@ -18,6 +18,7 @@
     "prepublish": "yarn build",
     "test": "NODE_ENV=test jest",
     "coveralls": "yarn test && cat coverage/lcov.info | coveralls",
+    "doc": "docco src/*",
     "lint": "./node_modules/.bin/eslint  --fix -c .eslintrc.js . --ext .js --ignore-path .gitignore --cache"
   },
   "devDependencies": {

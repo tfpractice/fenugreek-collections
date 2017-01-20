@@ -1,8 +1,8 @@
 // requires [spread](spread.html),[iterable](iterable.html),[cast](cast.html), and [group](group.html)
 import spread from './spread';
 import { removify, } from './iterable';
-import { asMap,asSet, } from './cast';
-import { append, flatten, flatTuple, triple, tuple, } from './group';
+import { asMap, asSet, } from './cast';
+import { append, } from './group';
 
 // **addBin** `:: [a] -> a -> [a]`  
 // adds an element to a collection;
