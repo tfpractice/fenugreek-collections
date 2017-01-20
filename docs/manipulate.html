@@ -95,25 +95,135 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>requires <a href="spread.html">spread</a>,<a href="reducers.html">reducers</a>, and <a href="cast.html">cast</a></p>
+
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
 <span class="hljs-keyword">import</span> { addBin, addBinMap, addBinSet, removeBin, removeBinTuple, }
  <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
-<span class="hljs-keyword">import</span> { asMap, asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
+<span class="hljs-keyword">import</span> { asMap, asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p><strong>addMap</strong> <code>:: Map[{k:v}] -&gt; k -&gt; v -&gt; Map[{k:v}]</code><br>adds an element to a Map;</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addMap = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> k =&gt; <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> asMap(c).set(k, v);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addMapTuple = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...tups) =&gt; tups.reduce(addBinMap, c);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addSet = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(addBinSet, c);
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addMap = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> k =&gt; <span class="hljs-function"><span class="hljs-params">v</span> =&gt;</span> asMap(c).set(k, v);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p><strong>addMapTuple</strong> <code>:: Map[{k:v}] -&gt; (...{k:v}) -&gt; Map[{k:v}]</code><br>adds multiple [k,v] pairs to an iterable;</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeSet = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(removeBin, asSet(c));
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeMap = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(removeBin, asMap(c));
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeMapTuple = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...tups) =&gt;
-  tups.reduce(removeBinTuple, asMap(c));
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addMapTuple = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...tups) =&gt; tups.reduce(addBinMap, c);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><strong>addSet</strong> <code>:: Set[a] -&gt; (...a) -&gt; Set[a]</code><br>adds multiple elements to a Set;</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> popElem = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> el =&gt; removeBin(c, el) &amp;&amp; el;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> popFirst = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> popElem(c)(spread(c).shift());</pre></div></div>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addSet = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(addBinSet, c);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p><strong>removeSet</strong> <code>:: Set[a] -&gt; (...a) -&gt; Set[a]</code><br>removes multiple elements from a Set;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeSet = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(removeBin, asSet(c));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p><strong>removeMap</strong> <code>:: Map[{k:v}] -&gt; (...k) -&gt; Map[{k:v}]</code><br>removes multiple keys from a Map;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeMap = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...els) =&gt; els.reduce(removeBin, asMap(c));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p><strong>removeMapTuple</strong> <code>:: Map[{k:v}] -&gt; (...{k:v}) -&gt; Map[{k:v}]</code><br>removes multiple [k,v] pairs from a Map;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> removeMapTuple = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> (...tups) =&gt;
+  tups.reduce(removeBinTuple, asMap(c));</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p><strong>popElem</strong> <code>:: iter[a] -&gt; a -&gt; iter[a]</code><br>removes the last element from an iterable;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> popElem = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> el =&gt; removeBin(c, el) &amp;&amp; el;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p><strong>popFirst</strong> <code>:: iter[a] -&gt; a -&gt; iter[a]</code><br>removes the first element from an iterable;</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> popFirst = <span class="hljs-function"><span class="hljs-params">c</span> =&gt;</span> popElem(c)(spread(c).shift());</pre></div></div>
             
         </li>
         
