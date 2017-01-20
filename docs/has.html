@@ -95,23 +95,133 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>requires <a href="cast.html">case</a>, <a href="spread.html">spread</a>, and <a href="iterable.html">iterable</a></p>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread, { spreadK, spreadV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
-<span class="hljs-keyword">import</span> { asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
 <span class="hljs-keyword">import</span> { hasify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> has = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> el =&gt; hasify(coll).has(el);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhas = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> el =&gt; !has(coll)(el);
+<span class="hljs-keyword">import</span> spread, { spreadK, spreadV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p><strong>has</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterable contains an element</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasK = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> k =&gt; has(spreadK(coll))(k);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasK = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> k =&gt; !hasK(coll)(k);
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> has = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> el =&gt; hasify(coll).has(el);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p><strong>xhas</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterable does not contain an element</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> v =&gt; has(spreadV(coll))(v);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> v =&gt; !hasV(coll)(v);
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhas = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> el =&gt; !has(coll)(el);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><strong>hasK</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables keys contains an element</p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasKV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> ([ k, v, ]) =&gt; hasK(coll)(k);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasKV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> ([ k, v, ]) =&gt; !hasKV(coll)([ k, v, ]);</pre></div></div>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasK = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> k =&gt; has(spreadK(coll))(k);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p><strong>xhasK</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables keys does not contain an element</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasK = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> k =&gt; !hasK(coll)(k);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p><strong>hasV</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables values contain an element</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> v =&gt; has(spreadV(coll))(v);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p><strong>xhasV</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables values does not contain an element</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> v =&gt; !hasV(coll)(v);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p><strong>hasKV</strong> <code>:: iter[a] -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys contain the key of a [k,v] pair</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasKV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> ([ k, v, ]) =&gt; hasK(coll)(k);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p><strong>xhasKV</strong> <code>:: iter[a] -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys do not contain the key of a [k,v] pair</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xhasKV = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> ([ k, v, ]) =&gt; !hasKV(coll)([ k, v, ]);</pre></div></div>
             
         </li>
         
