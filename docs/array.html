@@ -95,16 +95,88 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              
+              <p>requires <a href="spread.html">spread</a></p>
+
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p><strong>map</strong> <code>:: iter[a] -&gt; (a-&gt;b) -&gt; [b]</code><br>returns an array of the return values of a 
+function called on each element of an iterable </p>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> map = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).map(fn);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reduce = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> (fn, init) =&gt; spread(coll).reduce(fn, init);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> filter = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).filter(fn);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> every = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).every(fn);
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> some = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).some(fn);</pre></div></div>
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> map = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).map(fn);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p><strong>reduce</strong> <code>:: iter[a] -&gt; ((a-&gt;b), b) -&gt; b</code><br>returns the accumulated value of a function
+called on each element of an iterable </p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> reduce = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> (fn, init) =&gt; spread(coll).reduce(fn, init);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p><strong>filter</strong> <code>:: iter[a] -&gt; (a-&gt;bool) -&gt; [a]</code><br>returns the iterable’s values which return true for a given function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> filter = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).filter(fn);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p><strong>every</strong> <code>:: iter[a] -&gt; (a-&gt;bool) -&gt; bool</code><br>checks if every element of an iterable returns true for a given function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> every = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).every(fn);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p><strong>some</strong> <code>:: iter[a] -&gt; (a-&gt;b) -&gt; [b]</code><br>checks if any element of an iterable returns true for a given function</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> some = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> fn =&gt; spread(coll).some(fn);</pre></div></div>
             
         </li>
         

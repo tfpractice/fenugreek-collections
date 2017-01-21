@@ -1,5 +1,4 @@
-// requires [case](cast.html), [spread](spread.html), and [iterable](iterable.html)
-import { asSet, } from './cast';
+// requires [spread](spread.html), and [iterable](iterable.html)
 import { hasify, } from './iterable';
 import spread, { spreadK, spreadV, } from './spread';
 

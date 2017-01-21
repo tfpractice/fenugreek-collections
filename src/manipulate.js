@@ -1,7 +1,6 @@
 // requires [spread](spread.html),[reducers](reducers.html), and [cast](cast.html)
 import spread from './spread';
-import { addBin, addBinMap, addBinSet, removeBin, removeBinTuple, }
- from './reducers';
+import { addBinMap, addBinSet, removeBin, removeBinTuple, } from './reducers';
 import { asMap, asSet, } from './cast';
 
 // **addMap** `:: Map[{k:v}] -> k -> v -> Map[{k:v}]`  
