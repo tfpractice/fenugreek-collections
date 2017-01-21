@@ -2,3 +2,6 @@
 
 # fenugreek-collections
 a functional programming helpers for working with collections
+
+# documentation
+http://fenugreek-collections.surge.sh/
