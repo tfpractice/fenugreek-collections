@@ -1,6 +1,6 @@
 {
   "name": "fenugreek-collections",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "functional programming helpers for working with collections",
   "main": "dist/bundle.cjs.js",
   "repository": "git@github.com:tfpractice/fenugreek-collections.git",
