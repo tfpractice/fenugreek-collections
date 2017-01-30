@@ -100,8 +100,7 @@
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> spread <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;
-<span class="hljs-keyword">import</span> { addBin, addBinMap, addBinSet, removeBin, removeBinTuple, }
- <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
+<span class="hljs-keyword">import</span> { addBinMap, addBinSet, removeBin, removeBinTuple, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
 <span class="hljs-keyword">import</span> { asMap, asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;</pre></div></div>
             
         </li>
@@ -204,7 +203,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p><strong>popElem</strong> <code>:: iter[a] -&gt; a -&gt; iter[a]</code><br>removes the last element from an iterable;</p>
+              <p><strong>popElem</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; Iterable&lt;a&gt;</code><br>removes the last element from an iterable;</p>
 
             </div>
             
@@ -219,7 +218,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p><strong>popFirst</strong> <code>:: iter[a] -&gt; a -&gt; iter[a]</code><br>removes the first element from an iterable;</p>
+              <p><strong>popFirst</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; Iterable&lt;a&gt;</code><br>removes the first element from an iterable;</p>
 
             </div>
             

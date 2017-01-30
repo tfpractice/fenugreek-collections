@@ -3,15 +3,15 @@ import spread, { spreadKV, } from './spread';
 import { addBin, addBinMap, } from './reducers';
 import { hasK, hasKV, xhasK, xhasKV, } from './has';
 
-// **inter** `:: iter[a] -> iter[a] -> [a]`  
+// **inter** `:: Iterable<a> -> Iterable<a> -> [a]`  
 // returns elements shared between two iterables;
 export const inter = c0 => c1 => spread(c0).filter(hasK(c1));
 
-// **diff** `:: iter[a] -> iter[a] -> [a]`  
+// **diff** `:: Iterable<a> -> Iterable<a> -> [a]`  
 // returns elements of the first iterable absent from the second iterable
 export const diff = c0 => c1 => spread(c0).filter(xhasK(c1));
 
-// **union** `:: iter[a] -> iter[a] -> [a]`  
+// **union** `:: Iterable<a> -> Iterable<a> -> [a]`  
 // returns elements of both iterables
 export const union = c0 => c1 => spread(c0).concat(diff(c1)(c0));
 

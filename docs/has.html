@@ -95,12 +95,11 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-1">&#182;</a>
               </div>
-              <p>requires <a href="cast.html">case</a>, <a href="spread.html">spread</a>, and <a href="iterable.html">iterable</a></p>
+              <p>requires <a href="spread.html">spread</a>, and <a href="iterable.html">iterable</a></p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { asSet, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./cast'</span>;
-<span class="hljs-keyword">import</span> { hasify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { hasify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;
 <span class="hljs-keyword">import</span> spread, { spreadK, spreadV, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./spread'</span>;</pre></div></div>
             
         </li>
@@ -112,7 +111,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p><strong>has</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterable contains an element</p>
+              <p><strong>has</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterable contains an element</p>
 
             </div>
             
@@ -127,7 +126,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p><strong>xhas</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterable does not contain an element</p>
+              <p><strong>xhas</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterable does not contain an element</p>
 
             </div>
             
@@ -142,7 +141,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p><strong>hasK</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables keys contains an element</p>
+              <p><strong>hasK</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterables keys contains an element</p>
 
             </div>
             
@@ -157,7 +156,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p><strong>xhasK</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables keys does not contain an element</p>
+              <p><strong>xhasK</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterables keys does not contain an element</p>
 
             </div>
             
@@ -172,7 +171,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p><strong>hasV</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables values contain an element</p>
+              <p><strong>hasV</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterables values contain an element</p>
 
             </div>
             
@@ -187,7 +186,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p><strong>xhasV</strong> <code>:: iter[a] -&gt; a -&gt; bool</code><br>checks if an iterables values does not contain an element</p>
+              <p><strong>xhasV</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; bool</code><br>checks if an iterables values does not contain an element</p>
 
             </div>
             
@@ -202,7 +201,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p><strong>hasKV</strong> <code>:: iter[a] -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys contain the key of a [k,v] pair</p>
+              <p><strong>hasKV</strong> <code>:: Iterable&lt;a&gt; -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys contain the key of a [k,v] pair</p>
 
             </div>
             
@@ -217,7 +216,7 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p><strong>xhasKV</strong> <code>:: iter[a] -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys do not contain the key of a [k,v] pair</p>
+              <p><strong>xhasKV</strong> <code>:: Iterable&lt;a&gt; -&gt; [k,v] -&gt; bool</code><br>checks if an iterables keys do not contain the key of a [k,v] pair</p>
 
             </div>
             

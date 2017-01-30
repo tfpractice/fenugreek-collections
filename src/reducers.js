@@ -16,11 +16,11 @@ export const addBinSet = (c, el) => new Set(append(c)(el));
 // adds an element to a Map;
 export const addBinMap = (c, el) => new Map(append(c)(el));
 
-// **removeBin** `:: iter[a] -> a -> iter[a]`  
+// **removeBin** `:: Iterable<a> -> a -> Iterable<a>`  
 // removes an element from a collection;
 export const removeBin = (c, el) => removify(c).delete(el) ? c : c;
 
-// **removeBinArray** `:: iter[a] -> a -> [a]`  
+// **removeBinArray** `:: Iterable<a> -> a -> [a]`  
 // returns a [val, key] arrayimport spread from './spread';
 export const removeBinArray = (c, el) => spread(removeBin(asSet(c), el));
 

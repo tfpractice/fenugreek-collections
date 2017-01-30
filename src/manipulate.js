@@ -28,10 +28,10 @@ export const removeMap = c => (...els) => els.reduce(removeBin, asMap(c));
 export const removeMapTuple = c => (...tups) =>
   tups.reduce(removeBinTuple, asMap(c));
 
-// **popElem** `:: iter[a] -> a -> iter[a]`  
+// **popElem** `:: Iterable<a> -> a -> Iterable<a>`  
 // removes the last element from an iterable;
 export const popElem = c => el => removeBin(c, el) && el;
 
-// **popFirst** `:: iter[a] -> a -> iter[a]`  
+// **popFirst** `:: Iterable<a> -> a -> Iterable<a>`  
 // removes the first element from an iterable;
 export const popFirst = c => popElem(c)(spread(c).shift());
