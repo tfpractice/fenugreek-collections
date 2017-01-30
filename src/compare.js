@@ -1,5 +1,5 @@
 // requires [has](has.html), [spread](spread.html), and [reducers](reducers.html)
-import spread, { spreadKV, } from './spread';
+import { spread, spreadKV, } from './spread';
 import { addBin, addBinMap, } from './reducers';
 import { hasK, hasKV, xhasK, xhasKV, } from './has';
 

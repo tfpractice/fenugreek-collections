@@ -1,6 +1,6 @@
 // requires [spread](spread.html), and [iterable](iterable.html)
 import { hasify, } from './iterable';
-import spread, { spreadK, spreadV, } from './spread';
+import { spread, spreadK, spreadV, } from './spread';
 
 // **has** `:: Iterable<a> -> a -> bool`  
 // checks if an iterable contains an element

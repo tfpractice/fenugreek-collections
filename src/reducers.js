@@ -1,5 +1,5 @@
 // requires [spread](spread.html),[iterable](iterable.html),[cast](cast.html), and [group](group.html)
-import spread from './spread';
+import { spread, } from './spread';
 import { removify, } from './iterable';
 import { asMap, asSet, } from './cast';
 import { append, } from './group';

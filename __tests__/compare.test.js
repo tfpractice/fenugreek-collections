@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import spread,{ spreadK, spreadKV, spreadV, } from 'src/spread';
+import { spread, spreadK, spreadKV, spreadV, } from 'src/spread';
 import { diff, inter, mapDiff, mapInter, mapUnion, union, uniteMap, } from 'src/compare';
 
 const set0 = new Set([ 1, 2, 3, ]);

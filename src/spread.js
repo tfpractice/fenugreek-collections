@@ -3,7 +3,7 @@ import { iterify, } from './iterable';
 
 // **spread** `:: Iterable<a> -> Iterable<a>`  
 // returns an Iterable<a> of the collections default iterator
-const spread = (coll = []) => [ ...iterify(coll), ];
+export const spread = (coll = []) => [ ...iterify(coll), ];
 
 // **spreadK** `:: Iterable<a> -> Iterable<a>`  
 // returns an Iterable<a> of the collections keys
@@ -21,4 +21,4 @@ export const spreadE = (coll = []) => spread(iterify(coll).entries());
 // returns an Iterable<a> of the collections entries
 export const spreadKV = spreadE;
 
-export default spread;
+// export default spread;

@@ -1,6 +1,6 @@
 // requires [cast](cast.html), and [spread](spread.html)
 import { asMap, } from './cast';
-import spread, { spreadK, spreadKV, spreadV, } from './spread';
+import { spread, spreadK, spreadKV, spreadV, } from './spread';
 
 // **get** `:: Iterable<{k:v}> -> k -> v`  
 // retrieves a value stored at a key from a collection

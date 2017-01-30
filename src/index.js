@@ -4,9 +4,6 @@ export * from './iterable';
 // exports [spread](spread.html)
 export * from './spread';
 
-// exports [spread(default)](spread.html)
-export { default as spread, } from './spread';
-
 // exorts [group](group.html)
 export * from './group';
 

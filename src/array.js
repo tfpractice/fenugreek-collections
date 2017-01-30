@@ -1,5 +1,5 @@
 // requires [spread](spread.html)
-import spread from './spread';
+import { spread, } from './spread';
 
 // **map** `:: Iterable<a>  -> (a->b) -> [b]`  
 // returns an Iterable<a> of the return values of a 
