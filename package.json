@@ -35,7 +35,7 @@
     "docco-plus-multiline": "^3.0.2",
     "eslint": "^3.13.1",
     "eslint-config-airbnb-base": "^11.0.1",
-    "eslint-import-resolver-babel-module": "^2.2.1",
+    "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-json": "^1.2.0",
     "jasmine-expect": "^3.5.0",

@@ -1,5 +1,8 @@
-// exports [iterable](spread.html)
+// exports [iterable](iterable.html)
 export * from './iterable';
+
+// exports [array](array.html)
+export * from './array';
 
 // exports [spread](spread.html)
 export * from './spread';
