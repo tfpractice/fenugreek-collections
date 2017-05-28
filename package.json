@@ -54,7 +54,7 @@
     "surge": "^0.18.0"
   },
   "jest": {
-    "collectCoverage": "true",
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**"
     ],
