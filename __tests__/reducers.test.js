@@ -1,7 +1,7 @@
 import 'jasmine-expect';
 import { addBin,addBinMap, addBinSet, removeBin, removeBinArray, removeBinTuple, }
  from 'src/reducers';
-import { spread, spreadK, spreadKV, spreadV, } from 'src/spread';
+import { spreadK, } from 'src/spread';
 
 const cSet = new Set([ 1, 2, 3, 4, ]);
 const cMap = new Map().set(8, 1).set(7, 2).set(6, 3).set(5, 4);
