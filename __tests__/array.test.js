@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { every, everyPass, filtBy, filter, map, mapTo, reduce, some, somePass, } from 'src/array';
+import { every, everyPass, filtBy, filter, map, mapTo, reduce, reduceBy, some, somePass, } from 'src/array';
 
 const nums = [ 1, 2, 3, 4, 5, ];
 const logAndSum = (p, n) => { console.log('p,v', p, n); return p + n; };
@@ -41,5 +41,14 @@ describe('mapTo', () => {
 describe('reduce', () => {
   it('reduces the elements in an array to a single value determined by the callback', () => {
     expect(reduce(nums)((acc, v) => acc + v, 0)).toEqual(15);
+    expect(reduce(nums)(logAndSum, 0)).toEqual(15);
+  });
+});
+
+describe('reduceBy', () => {
+  it('reduces the elements in an array to a single value determined by the callback', () => {
+    expect(reduceBy((acc, v) => acc + v, 0)(nums)).toEqual(15);
+
+    expect(reduceBy(logAndSum,0)(nums)).toEqual(15);
   });
 });
