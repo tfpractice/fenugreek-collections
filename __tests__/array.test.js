@@ -1,5 +1,5 @@
 import 'jasmine-expect';
-import { every, everyPass, filtBy, filter, map, mapTo, reduce, reduceBy, some, somePass, } from 'src/array';
+import { every, everyPass, filtBy, filter, findBy, map, mapTo, reduce, reduceBy, some, somePass, } from 'src/array';
 
 const nums = [ 1, 2, 3, 4, 5, ];
 const sum = (p, n) => p + n;

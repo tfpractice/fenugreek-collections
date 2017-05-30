@@ -44,3 +44,5 @@ export const some = coll => fn => spread(coll).some(fn);
 // **somePass** `:: (a->b) -> Iterable<a>  -> [b]`  
 // checks if any element of an iterable returns true for a given function
 export const somePass = fn => coll => some(coll)(fn);
+
+export const findBy = matchFunc => coll => spread(coll).find(matchFunc);
