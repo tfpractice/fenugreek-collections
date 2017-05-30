@@ -1,6 +1,6 @@
 // requires [cast](cast.html), and [spread](spread.html)
 import { asMap, } from './cast';
-import { spread, spreadK, spreadKV, spreadV, } from './spread';
+import { spread, spreadK, spreadV, } from './spread';
 
 // **get** `:: Iterable<{k:v}> -> k -> v`  
 // retrieves a value stored at a key from a collection
@@ -33,3 +33,5 @@ export const firstV = (c = []) => first(spreadV(c));
 // **lastV** `:: Iterable<a> -> a -> [a]`  
 // returns the last value of an iterable
 export const lastV = (c = []) => last(spreadV(c));
+
+export const rest = coll => spread(coll).slice(1);

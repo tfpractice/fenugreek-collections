@@ -1,4 +1,4 @@
-import { first, firstK, firstV, fromIndex, get, last, lastK, lastV, }
+import { first, firstK, firstV, fromIndex, get,last, lastK, lastV, rest, }
 from 'src/accessors';
 
 const qSet = new Set([ 1, 2, 3, 4, ]);
@@ -47,6 +47,11 @@ describe('accessors', () => {
   describe('firstV', () => {
     it('retrieves the last key of a collection', () => {
       expect(firstV(qMap)).toBe(1);
+    });
+  });
+  describe('rest', () => {
+    it('returns all but the first element', () => {
+      expect(rest(qSet).length).toEqual(3);
     });
   });
 });

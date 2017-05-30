@@ -1,6 +1,6 @@
 import 'jasmine-expect';
 import { append, appendBin, flatten, flattenBin, flatTuple,
-  flatTupleBin, triple, tuple, tupleBin, } from 'src/group';
+  flatTupleBin, triple, tuple, tupleBin, turn, } from 'src/group';
 const binarr = [ 1,2,3,4, ];
 
 describe('groupings', () => {
@@ -40,6 +40,11 @@ describe('groupings', () => {
   describe('flatTuple(v0)([...elements])', () => {
     it('returns a [key0,...elements] array', () => {
       expect(flatTuple(0, 1)([ 'zero', 'one', ])).toBeArray();
+    });
+  });
+  describe('turn', () => {
+    it('palces the first element at the end of the collection', () => {
+      expect(turn(binarr)[0]).toEqual(binarr[1]);
     });
   });
 });

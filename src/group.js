@@ -1,5 +1,6 @@
 // requires [iterify](iterable.html)
 import { iterify, } from './iterable';
+import { first, rest, } from './accessors';
 
 // **tuple** `:: a -> a -> [a]`  
 // returns a [val, key] Iterable<a>
@@ -37,3 +38,5 @@ export const append = coll => val => [ ...iterify(coll), val, ];
 // **appendBin** `:: (Iterable<a>,a) -> [a]`  
 // concatenates an iterable and an object
 export const appendBin = (c, v) => append(c)(v);
+
+export const turn = coll => append(rest(coll))(first(coll));
