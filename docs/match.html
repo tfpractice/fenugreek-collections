@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>match.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="accessors.html">
+                  accessors.js
+                </a>
+              
+                
+                <a class="source" href="array.html">
+                  array.js
+                </a>
+              
+                
+                <a class="source" href="cast.html">
+                  cast.js
+                </a>
+              
+                
+                <a class="source" href="compare.html">
+                  compare.js
+                </a>
+              
+                
+                <a class="source" href="group.html">
+                  group.js
+                </a>
+              
+                
+                <a class="source" href="has.html">
+                  has.js
+                </a>
+              
+                
+                <a class="source" href="index.html">
+                  index.js
+                </a>
+              
+                
+                <a class="source" href="iterable.html">
+                  iterable.js
+                </a>
+              
+                
+                <a class="source" href="length.html">
+                  length.js
+                </a>
+              
+                
+                <a class="source" href="manipulate.html">
+                  manipulate.js
+                </a>
+              
+                
+                <a class="source" href="match.html">
+                  match.js
+                </a>
+              
+                
+                <a class="source" href="reducers.html">
+                  reducers.js
+                </a>
+              
+                
+                <a class="source" href="spread.html">
+                  spread.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>match.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { filtBy, mapTo,some, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./array'</span>;
+<span class="hljs-keyword">import</span> { has, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./has'</span>;
+<span class="hljs-keyword">import</span> { append, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./group'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> identity = <span class="hljs-function"><span class="hljs-params">x</span> =&gt;</span> x;
+
+<span class="hljs-keyword">const</span> id = identity;
+<span class="hljs-keyword">const</span> { assign, } = <span class="hljs-built_in">Object</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> matches = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> mFn(a) === mFn(b);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> matchBin = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> (a,b) =&gt; matches(mFn)(a)(b);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xMatches = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">b</span> =&gt;</span> !matches(mFn)(a)(b);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xMatchBin = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> (a,b) =&gt; !matches(mFn)(a)(b);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mergeMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> b =&gt; <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> 
+  matches(mFn)(a)(b) ? assign({},a,b) : a;
+  
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> swapMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> b =&gt; <span class="hljs-function"><span class="hljs-params">a</span> =&gt;</span> matches(mFn)(a)(b) ? b : a;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> matchMap = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> coll =&gt; mapTo(mFn)(coll);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> hasMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> has(matchMap(mFn)(coll))(mFn(a));
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> xHasMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> !hasMatch(mFn)(a)(coll); 
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> addUniq = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> 
+  some(coll)(matches(mFn)(a)) ? coll : append(coll)(a);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> dropMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span>
+  filtBy(xMatches(mFn)(a))(coll);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> replaceMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span>
+  mapTo(swapMatch(mFn)(a))(coll);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> updateMatch = <span class="hljs-function">(<span class="hljs-params">mFn = id</span>) =&gt;</span> a =&gt; <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span>
+  mapTo(mergeMatch(mFn)(a))(coll);</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

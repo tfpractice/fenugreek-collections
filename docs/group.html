@@ -60,8 +60,18 @@
                 </a>
               
                 
+                <a class="source" href="length.html">
+                  length.js
+                </a>
+              
+                
                 <a class="source" href="manipulate.html">
                   manipulate.js
+                </a>
+              
+                
+                <a class="source" href="match.html">
+                  match.js
                 </a>
               
                 
@@ -99,7 +109,8 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { iterify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">import</span> { iterify, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./iterable'</span>;
+<span class="hljs-keyword">import</span> { first, rest, } <span class="hljs-keyword">from</span> <span class="hljs-string">'./accessors'</span>;</pre></div></div>
             
         </li>
         
@@ -235,7 +246,9 @@
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> appendBin = <span class="hljs-function">(<span class="hljs-params">c, v</span>) =&gt;</span> append(c)(v);</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> appendBin = <span class="hljs-function">(<span class="hljs-params">c, v</span>) =&gt;</span> append(c)(v);
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> turn = <span class="hljs-function"><span class="hljs-params">coll</span> =&gt;</span> append(rest(coll))(first(coll));</pre></div></div>
             
         </li>
         
