@@ -2,15 +2,15 @@
 import { spread, } from './spread';
 
 // **map** `:: Iterable<a>  -> (a->b) -> [b]`
-// returns an Iterable<a> of the return values of a
+// returns an Iterable of the return values of a
 // function called on each element of an iterable
 export const map = coll => fn => spread(coll).map(fn);
 
 // **mapTo** `:: (a->b) -> Iterable<a>  -> [b]`
-// returns an Iterable<a> of the return values of a
+// returns an Iterable of the return values of a
 // function called on each element of an iterable
 export const mapTo = fn => coll => map(coll)(fn);
-
+  
 // **reduce** `:: Iterable<a>  -> ((a->b), b) -> b`
 // returns the accumulated value of a function
 // called on each element of an iterable

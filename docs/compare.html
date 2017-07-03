@@ -122,7 +122,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p><strong>inter</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code><br>returns elements shared between two iterables;</p>
+              <p><strong>inter</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code>
+returns elements shared between two iterables;</p>
 
             </div>
             
@@ -137,7 +138,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p><strong>diff</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code><br>returns elements of the first iterable absent from the second iterable</p>
+              <p><strong>diff</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code>
+returns elements of the first iterable absent from the second iterable</p>
 
             </div>
             
@@ -152,7 +154,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p><strong>union</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code><br>returns elements of both iterables</p>
+              <p><strong>union</strong> <code>:: Iterable&lt;a&gt; -&gt; Iterable&lt;a&gt; -&gt; [a]</code>
+returns elements of both iterables</p>
 
             </div>
             
@@ -167,12 +170,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p><strong>mapInter</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code><br>returns elements shared between two maps;</p>
+              <p><strong>mapInter</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code>
+returns elements shared between two maps;</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapInter = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
-  spread(c0).filter(hasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>);</pre></div></div>
+  spread(c0).filter(hasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>());</pre></div></div>
             
         </li>
         
@@ -183,12 +187,13 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p><strong>mapDiff</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code><br>returns elements of the first map absent from the second map</p>
+              <p><strong>mapDiff</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code>
+returns elements of the first map absent from the second map</p>
 
             </div>
             
             <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> mapDiff = <span class="hljs-function"><span class="hljs-params">c0</span> =&gt;</span> c1 =&gt;
-  spread(c0).filter(xhasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>);</pre></div></div>
+  spread(c0).filter(xhasKV(c1)).reduce(addBinMap, <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>());</pre></div></div>
             
         </li>
         
@@ -199,7 +204,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p><strong>mapUnion</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code><br>returns elements of both maps</p>
+              <p><strong>mapUnion</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code>
+returns elements of both maps</p>
 
             </div>
             
@@ -215,7 +221,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p><strong>mapUnion</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code><br>returns elements of both maps</p>
+              <p><strong>mapUnion</strong> <code>:: Map[{k:v}] -&gt; Map[{k:v}] -&gt; Map[{k:v}]</code>
+returns elements of both maps</p>
 
             </div>
             

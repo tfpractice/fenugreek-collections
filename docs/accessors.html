@@ -121,7 +121,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-2">&#182;</a>
               </div>
-              <p><strong>get</strong> <code>:: Iterable&lt;{k:v}&gt; -&gt; k -&gt; v</code><br>retrieves a value stored at a key from a collection</p>
+              <p><strong>get</strong> <code>:: Iterable&lt;{k:v}&gt; -&gt; k -&gt; v</code>
+retrieves a value stored at a key from a collection</p>
 
             </div>
             
@@ -136,11 +137,12 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-3">&#182;</a>
               </div>
-              <p><strong>fromIndex</strong> <code>:: Iterable&lt;a&gt; -&gt; number -&gt; a</code><br>returns the value stored at an Iterable<a> position</p>
+              <p><strong>fromIndex</strong> <code>:: Iterable&lt;a&gt; -&gt; number -&gt; a</code>
+returns the value stored at an Iterable position</p>
 
             </div>
             
-            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> fromIndex = <span class="hljs-function">(<span class="hljs-params">c = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span></span>) =&gt;</span> i =&gt; spread(c).slice(i, i + <span class="hljs-number">1</span>).shift();</pre></div></div>
+            <div class="content"><div class='highlight'><pre><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> fromIndex = <span class="hljs-function">(<span class="hljs-params">c = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(</span>)) =&gt;</span> i =&gt; spread(c).slice(i, i + <span class="hljs-number">1</span>).shift();</pre></div></div>
             
         </li>
         
@@ -151,7 +153,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-4">&#182;</a>
               </div>
-              <p><strong>first</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code><br>returns the first element of an iterable</p>
+              <p><strong>first</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code>
+returns the first element of an iterable</p>
 
             </div>
             
@@ -166,7 +169,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-5">&#182;</a>
               </div>
-              <p><strong>last</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code><br>returns the last element of an iterable</p>
+              <p><strong>last</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code>
+returns the last element of an iterable</p>
 
             </div>
             
@@ -181,7 +185,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
-              <p><strong>firstK</strong> <code>:: Iterable&lt;{k:v}&gt;  -&gt; k</code><br>returns the first key of an iterable</p>
+              <p><strong>firstK</strong> <code>:: Iterable&lt;{k:v}&gt;  -&gt; k</code>
+returns the first key of an iterable</p>
 
             </div>
             
@@ -196,7 +201,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-7">&#182;</a>
               </div>
-              <p><strong>lastK</strong> <code>:: Iterable&lt;{k:v}&gt;  -&gt; k</code><br>returns the last key of an iterable</p>
+              <p><strong>lastK</strong> <code>:: Iterable&lt;{k:v}&gt;  -&gt; k</code>
+returns the last key of an iterable</p>
 
             </div>
             
@@ -211,7 +217,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-8">&#182;</a>
               </div>
-              <p><strong>firstV</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code><br>returns the first value of an iterable</p>
+              <p><strong>firstV</strong> <code>:: Iterable&lt;a&gt; -&gt; a</code>
+returns the first value of an iterable</p>
 
             </div>
             
@@ -226,7 +233,8 @@
               <div class="pilwrap ">
                 <a class="pilcrow" href="#section-9">&#182;</a>
               </div>
-              <p><strong>lastV</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; [a]</code><br>returns the last value of an iterable</p>
+              <p><strong>lastV</strong> <code>:: Iterable&lt;a&gt; -&gt; a -&gt; [a]</code>
+returns the last value of an iterable</p>
 
             </div>
             

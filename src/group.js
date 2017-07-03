@@ -15,12 +15,12 @@ export const tupleBin = (v, k) => tuple(v)(k);
 export const triple = val => key0 => key1 => [ key0, key1, val, ];
 
 // **flatten** `:: Iterable<a> -> Iterable<a> -> [a]`  
-// returns an Iterable<a> of the contents of two iterables
+// returns an Iterable of the contents of two iterables
 export const flatten = c0 => c1 =>
 [ ...iterify(c0), ...iterify(c1), ];
 
 // **flattenBin** `:: (Iterable<a>, Iterable<a>) -> [a]`  
-// returns an Iterable<a> of the contents of two iterables
+// returns an Iterable of the contents of two iterables
 export const flattenBin = (c0, c1) => flatten(c0)(c1);
 
 // **flatTuple** `:: a -> [a] -> [a]`  

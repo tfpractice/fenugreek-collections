@@ -3,7 +3,7 @@
 export const isIterable = o => !!o[Symbol.iterator];
 
 // **iterify** `:: obj -> iterable`
-// returns the object or an Iterable<a> containging the object
+// returns the object or an Iterable containing the object
 export const iterify = o => isIterable(o) ? o : [ o, ];
 
 // ** isRemovable **`:: obj -> bool`
@@ -15,9 +15,9 @@ export const isRemovable = c => !!c.delete;
 export const isHasable = c => !!c.has;
 
 // ** removify **`:: obj -> [map|set] `
-// returns the object or an Iterable<a> containging the object
+// returns the object or an Iterable containging the object
 export const removify = c => isRemovable(c) ? c : new Set(iterify(c));
 
 // ** hasify ** `:: obj -> [map|set] `
-// returns the object or an Iterable<a> containging the object
+// returns the object or an Iterable containging the object
 export const hasify = c => isHasable(c) ? c : new Set(iterify(c));
